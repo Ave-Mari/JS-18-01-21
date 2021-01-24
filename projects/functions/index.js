@@ -17,8 +17,7 @@
 function returnFirstArgument(value) {  
   return value;
 }
-returnFirstArgument(15); 
-returnFirstArgument("Hello"); 
+
 
 
 /*
@@ -37,17 +36,9 @@ returnFirstArgument("Hello");
  */
 
 
- //2.1
-function sumWithDefaults(a, b) {
-  return a + b; 
-}
-console.log(sumWithDefaults(10, 9));
- 
-//2.2
 function sumWithDefaults(a, b = 100) {
   return a + b; 
 }
-console.log(sumWithDefaults(10));
 
 
 
@@ -60,14 +51,11 @@ console.log(sumWithDefaults(10));
    returnFnResult(() => 'привет') вернет 'привет'
  */
 
-function returnFnResult(fn) {
-  function anotherFunc() {    
-    return fn;
-  }
-  return anotherFunc(); 
+function returnFnResult(fn) {     
+    return fn();
+  
 };
 
-returnFnResult("Привет"); 
 
 /*
  Задание 4:
@@ -83,11 +71,9 @@ returnFnResult("Привет");
    console.log(f()); // выведет 13
  */
 
-function returnCounter(number) {
-  var a = 0;
+function returnCounter(number = 0) {
   return function() {
-    a++ 
-    return number + a;    
+    return ++number;  
   }  
 }
 
@@ -106,14 +92,13 @@ console.log(f());
    returnArgumentsArray(1, 2, 3) вернет [1, 2, 3]
  */
 
-function returnArgumentsArray(a, b, c) {
+function returnArgumentsArray() {
   var newArr = [];
   for (var i = 0; i < arguments.length; i++) {
   newArr[i] = arguments[i];
 }
   return newArr;
 }
-
 
 returnArgumentsArray(1, 2, 3, 4, 5);
 
