@@ -14,10 +14,12 @@
  */
 
 
-function returnFirstArgument(glass) {  
-  return glass;
+function returnFirstArgument(value) {  
+  return value;
 }
-returnFirstArgument("Стекло"); 
+returnFirstArgument(15); 
+returnFirstArgument("Hello"); 
+
 
 /*
  Задание 2:
@@ -130,7 +132,11 @@ returnArgumentsArray(1, 2, 3, 4, 5);
 
    console.log(newSum()) выведет 6
  */
-function bindFunction(fn, ...args) {}
+function bindFunction(fn, ...args) {
+    return function() {
+      return fn(...args)
+    }
+};
 
 export {
   returnFirstArgument,
