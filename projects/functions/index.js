@@ -1,3 +1,5 @@
+
+
 /* ДЗ 1 - Функции */
 
 /*
@@ -101,6 +103,8 @@ function returnArgumentsArray() {
 }
 
 returnArgumentsArray(1, 2, 3, 4, 5);
+
+
 
 /*
  Задание 6 *:
