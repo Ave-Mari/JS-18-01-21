@@ -80,6 +80,7 @@ function returnBadArguments(fn, ...args) {
     throw new Error("fn is not a function");
   };
   var array = []; 
+  
   for (var arg in args) {
     try {
       fn(arg);
@@ -88,7 +89,7 @@ function returnBadArguments(fn, ...args) {
     }
   }
 
-  return array;  
+  return array;   
 };
 
 /*
@@ -109,38 +110,46 @@ function returnBadArguments(fn, ...args) {
    - какой-либо из аргументов div является нулем (с текстом "division by 0")
  */
 function calculator(number = 0) {
-  if (typeof isNaN(number)) { 
+  if (!Number.isFinite(number)) { 
     throw new Error("number is not a number");
   };
   return {
-    sum(...arguments) {
+    sum(...args) {
       var result = number;
-      for (var argument of arguments) {
-        result += number; 
+      for (var arg of args) {
+        result += arg; 
       }
+      return result;
     },
-    dif(...arguments) {
+    dif(...args) {
       var result = number; 
-      for (var argument of arguments) {
-        result -= argument;
+      for (var arg of args) {
+        result -= arg;
       }
+      return result;
     },
-    div(...arguments) {      
+    div(...args) {      
       var result = number;
-      for (var argument of arguments) {
-        if (argument === 0) {
+      for (var arg of args) {
+        if (arg === 0) {
           throw new Error("division by 0"); 
         }
-        result /= argument;
+        result /= arg;
       }
+      return result;
     },
-    mul(...arguments) { 
+    mul(...args) { 
       var result = number; 
-      result *= argument;
-    }
+      result *= arg;
+      for (var arg of args) {
+        result *= arg;
+      }
+      return result;
+    }    
   }  
 };
 
 /* При решении задач, постарайтесь использовать отладчик */
 
 export { isAllTrue, isSomeTrue, returnBadArguments, calculator };
+
