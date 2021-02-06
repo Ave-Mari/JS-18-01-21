@@ -18,19 +18,21 @@
  */
 function isAllTrue(array, fn) {
   if (typeof fn !== 'function') {
-    throw new Error("fn is not a function");
-  };
-  if (!Array.isArray(array) || array.length) {
-    throw new Error("empty array"); 
-  };
+    throw new Error('fn is not a function');
+  }
 
-  for (var element of array) {
+  if (!Array.isArray(array) || !array.length) {
+    throw new Error('empty array');
+  }
+
+  for (const element of array) {
     if (!fn(element)) {
       return false;
     }
-  };
-  return true; 
-};
+  }
+
+  return true;
+}
 
 /*
  Задание 2:
@@ -49,20 +51,22 @@ function isAllTrue(array, fn) {
    isSomeTrue([1, 2, 3, 4, 5], n => n > 20) // вернет false
  */
 function isSomeTrue(array, fn) {
-  if (!Array.isArray(array) || array.length) {
-    throw new Error("empty array"); 
-  };
   if (typeof fn !== 'function') {
-    throw new Error("fn is not a function");
-  };
-  for (var element of array) {
+    throw new Error('fn is not a function');
+  }
+
+  if (!Array.isArray(array) || !array.length) {
+    throw new Error('empty array');
+  }
+
+  for (const element of array) {
     if (fn(element)) {
-      return  true;
+      return true;
     }
   }
 
   return false;
-};
+}
 
 /*
  Задание 3:
@@ -77,10 +81,12 @@ function isSomeTrue(array, fn) {
  */
 function returnBadArguments(fn, ...args) {
   if (typeof fn !== 'function') {
-    throw new Error("fn is not a function");
-  };
-  var array = []; 
-  for (var arg in args) {
+    throw new Error('fn is not a function');
+  }
+
+  const array = [];
+
+  for (const arg of args) {
     try {
       fn(arg);
     } catch {
@@ -88,8 +94,8 @@ function returnBadArguments(fn, ...args) {
     }
   }
 
-  return array;  
-};
+  return array;
+}
 
 /*
  Задание 4:
@@ -109,37 +115,44 @@ function returnBadArguments(fn, ...args) {
    - какой-либо из аргументов div является нулем (с текстом "division by 0")
  */
 function calculator(number = 0) {
-  if (typeof isNaN(number)) { 
-    throw new Error("number is not a number");
-  };
+  if (!Number.isFinite(number)) {
+    throw new Error('number is not a number');
+  }
   return {
-    sum(...arguments) {
-      var result = number;
-      for (var argument of arguments) {
-        result += number; 
+    sum(...args) {
+      let result = number;
+      for (const arg of args) {
+        result += arg;
       }
+      return result;
     },
-    dif(...arguments) {
-      var result = number; 
-      for (var argument of arguments) {
-        result -= argument;
+    dif(...args) {
+      let result = number;
+      for (const arg of args) {
+        result -= arg;
       }
+      return result;
     },
-    div(...arguments) {      
-      var result = number;
-      for (var argument of arguments) {
-        if (argument === 0) {
-          throw new Error("division by 0"); 
+    div(...args) {
+      let result = number;
+      for (const arg of args) {
+        if (arg === 0) {
+          throw new Error('division by 0');
         }
-        result /= argument;
+        result /= arg;
       }
+      return result;
     },
-    mul(...arguments) { 
-      var result = number; 
-      result *= argument;
-    }
-  }  
-};
+    mul(...args) {
+      let result = number;
+
+      for (const arg of args) {
+        result *= arg;
+      }
+      return result;
+    },
+  };
+}
 
 /* При решении задач, постарайтесь использовать отладчик */
 
