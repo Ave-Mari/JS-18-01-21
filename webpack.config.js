@@ -45,7 +45,8 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /\.js$/,
+        test: /\.html$/,
+        include: [path.resolve(__dirname, 'projects')],
         exclude: /node_modules/,
         loader: 'babel-loader',
         options: { cacheDirectory: true },
