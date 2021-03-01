@@ -28,10 +28,11 @@ export default class InteractiveMap {
         this.clusterer = new ymaps.Clusterer({
             groupByCoordinates: true,
             clusterDisableClickZoom: true,
-            clusterOpenBaloonInClick: false
+            clusterOpenBalloonOnClick: false
         });
         this.clusterer.events.add('click', (e) => {
             const coords = e.get('target').geometry.getCoordinates(); 
+            console.log(coords);
             this.onClick(coords);
         });
         this.map = new ymaps.Map(this.mapId, {
@@ -51,7 +52,7 @@ export default class InteractiveMap {
         this.map.balloon.setData(content);
     }
 
-    closeBaloon() {
+    closeBalloon() {
         this.map.balloon.close();
     }
 

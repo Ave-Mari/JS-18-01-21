@@ -21,7 +21,7 @@ export default class GeoReview {
   }
 
   async callApi(method, body = {}) {
-    const res = await fetch(`http://localhost:8080/ymapHomework/${method}/${method}`, {
+    const res = await fetch(`http://localhost:8080/ymapHomework/${method}`, {
       method: 'post', 
       body: JSON.stringify(body),
     });
@@ -80,6 +80,7 @@ export default class GeoReview {
         this.map.closeBalloon();
       } catch (e) {
         const formError = document.querySelector('.form-error');
+        console.log(e.message);
         formError.innerText = e.message;
       }
     }
