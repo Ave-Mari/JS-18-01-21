@@ -21,7 +21,7 @@ export default class GeoReview {
   }
 
   async callApi(method, body = {}) {
-    const res = await fetch(`http://localhost:8080/projects/ymapHomework/${method}`, {
+    const res = await fetch(`http://localhost:8080/ymapHomework/${method}/${method}`, {
       method: 'post', 
       body: JSON.stringify(body),
     });
