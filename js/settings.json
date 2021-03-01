@@ -1,0 +1,25 @@
+{
+  "proxy": {
+    "/ymapHomework/list": {
+      "target": "http://localhost:8080/",
+      "pathRewrite": {
+        "^/ymapHomework": ""
+      }
+    },
+    "/ymapHomework/add": {
+      "target": "http://localhost:8080/",
+      "pathRewrite": {
+        "^/ymapHomework": ""
+      }
+    },
+    "/ymapHomework/coords": {
+      "target": "http://localhost:8080/",
+      "pathRewrite": {
+        "^/ymapHomework": ""
+      }
+    }
+  }
+}
+
+
+ 

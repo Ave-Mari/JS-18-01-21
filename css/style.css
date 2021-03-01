@@ -1,0 +1,54 @@
+#map {
+    width: 100%;
+    height: 100vh;  
+    margin: 0;
+    padding: 0;
+}
+
+
+
+.modal__wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center
+}
+
+.title {
+    font-size: 16px;
+    font-weight: 700;
+    font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+}
+
+.input {
+    font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+    font-size: 12px;
+    width: 290px;
+    height: 31px;
+    border-radius: 3px;
+    border: 2px solid rgb(185, 185, 185);
+    margin-bottom: 15px;
+    padding: 5px;
+}
+
+.input-textarea {
+    font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+    font-size: 12px;
+    border-radius: 3px;
+    border: 2px solid rgb(185, 185, 185);
+    margin-bottom: 15px;
+    max-width: 290px;
+    max-height: 56px;
+    padding: 5px;
+}
+
+
+.btn {
+    width: 100px;
+    height: 31px;
+    background: #FF8663;
+    border-radius: 3px;
+    border: none;
+    color: white;
+    cursor: pointer;
+}
+

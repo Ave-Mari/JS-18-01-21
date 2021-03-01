@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8"> 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Reviews</title>
+</head>
+<body>    
+
+        <div id="map"></div>
+
+        <script type="template" id="addFormTemplate">
+    <div class="review__list"></div>
+    <div id="modal" data-role="review-form">
+        <h1 class="title">Отзыв:</h1>
+        <div class="modal__wrapper">
+        <input data-role="review-name" class="input" type="text" placeholder="Укажите ваше имя">
+        <input data-role="review-place" class="input" type="text" placeholder="Укажите место">
+        <textarea data-role="review-text" class="input-textarea" name="review" cols="30" rows="3" placeholder="Укажите отзыв"></textarea>
+        <button  data-role="review-add" class="btn">Добавить</button>
+        <span class="form-error"></span>
+    </div> 
+</div> 
+s
+        </script>
+        
+            
+    <script  type="module" src="js/main.js"></script> 
+    <script type="text" src="server/index.js"></script> 
+       
+    
+       
+</body>
+</html>
