@@ -1,0 +1,225 @@
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;500;700&display=swap');
+    
+                body {
+                font-family: 'Ubuntu', sans-serif;
+                }
+
+                #app {
+                display: flex;
+                justify-content: center;
+                }
+            
+                #login {
+                position: absolute;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                margin: 0 auto;
+    
+                }
+    
+                .login__wrapper {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                width: 452px;
+                background-color: #17212B;
+                padding: 36px 10px;
+                }
+    
+                .login__title {
+                color: #fff;
+                font-size: 24px;
+                font-weight: 500;
+    
+                }
+    
+                .login__text {
+                width: 330px;
+                text-align: center;
+                color: #7F91A4;
+    
+                }
+    
+                .login__input__wrapper {
+                background-color: #17212B;
+                border-bottom: 2px solid #7F91A4;
+                margin-bottom: 42px;
+                }
+    
+    
+                .login__input {
+                border: none;
+                padding-bottom: 12px;
+                background-color: #17212B;
+                color: #858F98;
+                }
+    
+    
+                .login__btn {   
+                font-size: 15px;
+                font-weight: 500;
+                background-color: #5188C1;
+                color: #fff;
+                border: none;
+                border-radius: 2px;
+                padding: 9px 16px;
+                cursor: pointer;
+    
+                }
+    
+                .login__btn:hover {
+                background-color: #4a43aa;
+                }
+
+                #main {
+                    display: flex;
+                }
+    
+                #chat {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                }
+    
+                .chat-wrapper {
+                display: flex;
+                width: 810px;
+                }
+    
+                .left-side {
+                width: 263px;
+                height: 452px;
+                background-color: #17212B;
+                }
+    
+                .user-list-header {
+                font-size: 20px;
+                font-weight: 400;
+                margin: 19px 13px;
+                color: #fff;
+                }
+
+                .user-list-title {
+                color: #fff;
+                margin-left: 41px;
+                }
+
+                .user-info {
+                margin-bottom: 20px;
+                display: flex;
+                align-items: center;
+                }
+
+                .user-name {
+                    font-size: 18px;
+                    font-weight: bold;
+                }
+
+                .user-photo, .message-item-photo {
+                    margin-right: 15px;
+                    background: url(/projects/mega-chat-1/no-photo.png);
+                    background-size: cover;
+                    border-radius: 50%;
+                    width: 50px;
+                    height: 50px;
+                }
+
+                .user-list-header {
+                    text-transform: uppercase;
+                    font-weight: bold;
+                }
+
+                .user-list {
+                    padding: 5px 0 0 10px
+                }
+
+                .right-side {
+                    display: flex;
+                    flex-grow: 1;
+                    flex-direction: column;
+                    padding: 10px;
+                }
+
+                .messages-container {
+                    flex-grow: 1;
+                    overflow: scroll;
+                }
+
+                .input-container {
+                    margin-top: 10px;
+                    display: flex;
+                    align-items: center;
+                }
+
+                .message-input {
+                    height: 30px;
+                    flex-grow: 1;
+                    margin: 0 10px 0 0;
+                }
+
+                .send-button {
+                    height: 25px;
+                }
+
+                .login-error {
+                    margin-bottom: 17px;
+                    color: red;
+                    font-weight: 200;
+                }
+                
+                
+
+            </style>
+    
+    <div id="app">
+            <div id="login" class="hidden">
+                <div class="login__wrapper">
+                    <img src="login.png" alt="login" class="login__img">
+                    <h1 class="login__title">Авторизация</h1>
+                    <div class="login__text">
+                        <p>Введите пожалуйста свой ник для дальнейшей авторизации</p>
+                    </div>
+                    <div class="login__input__wrapper"><input type="text" class="login__input" data-role="login-name-input" placeholder="Введите свой ник"></div> 
+                    <div class="login-error" data-role="login-error"></div>               
+                    <button class="login__btn" data-role="login-btn">Войти</button>
+                    
+                </div>
+            </div>
+            <div id="main" class="hidden">
+                <div class="chat-wrapper">
+                    <div class="left-side">
+                        <div class="user-info">
+                            <div class="user-photo" data-role="user-photo"></div>
+                            <div class="user-name" data-role="user-name"></div>
+                        </div>    
+                        <div class="user-list-container">
+                            <div class="user-list-title">
+                                Все пользователи:
+                            </div>
+            
+                            <div class="user-list" data-role="user-list">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="right-side">
+                        <div class="messages-container" data-role="messages-list"></div>
+                        <div class="input-container" data-role="message-sender">
+                            <input class="message-input" data-role="message-input" type="text" placeholder="сообщение"/>
+                            <button class="send-button" data-role="message-send-button">Отправить</button>
+                        </div>
+                    </div>
+    
+                </div>
+    
+            </div>
+    
+    
+        </div>
+        
+

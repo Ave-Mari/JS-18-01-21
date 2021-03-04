@@ -1,0 +1,14 @@
+{
+  "proxy": {
+    "/MyChat/ws": {
+      "target": "ws://localhost:8080",
+      "ws": true
+    },
+    "/MyChat/upload-photo": {
+      "target": "http://localhost:8080"
+    },
+    "/MyChat/photos": {
+      "target": "http://localhost:8080"
+    }
+  }
+}
